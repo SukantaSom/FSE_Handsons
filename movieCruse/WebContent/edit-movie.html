@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movie Cruiser</title>
+		<link rel="icon" type="image/ico" href="./images/logo.png" />
+		<link rel="stylesheet" type="text/css" href="./style/style.css">
+		<script src="./js/script.js"></script>
+	</head>
+	<body class="xyz">
+		<header>
+			<span class="header-title">Movie Cruiser</span>
+			<img class="header-logo" src="./images/logo.png" alt="Movie Cruiser Logo"></img>
+			<nav>
+				<a class="nav-link" href="./movie-list-admin.html">Movies</a>
+			</nav>
+		</header>
+		<article>
+			<h2 class="article-heading">Edit Movie</h2>
+			<form name="editMovieForm" onsubmit="return validateForm();" action="edit-movie-status.html">
+				<table class="form-table">
+					<tr>
+						<td colspan="4">
+							<label class="form-item" for="field-title">Title</label>
+							<input class="form-input" type="text" name="title" id="field-title" value="Avengers - End Game"></input>
+							<p class="form-error-message" id="title-error"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="form-item" for="field-boxOffice">Box Office ($)</label>
+							<input class="form-input form-input-right" type="text" name="boxOffice" id="field-boxOffice" value="2787965087"></input>
+							<p class="form-error-message" id="boxOffice-error"></p>
+						</td>
+						<th>
+							<label class="form-item" for="field-yes">Active</label><br>
+							<input class="form-radiobutton" type="radio" name="active" id="field-yes" value="Yes" checked><label class="form-item" for="field-yes">Yes</label></input>
+							<input class="form-radiobutton" type="radio" name="active" id="field-no" value="No"><label class="form-item" for="field-no">No</label></input>
+						</th>
+						<td>
+							<label class="form-item" for="field-dateOfLaunch">Date of Launch</label>
+							<input class="form-input" type="text" name="dateOfLaunch" id="field-dateOfLaunch" placeholder="dd/mm/yyyy" value="27/04/2022"></input>
+							<p class="form-error-message" id="dateOfLaunch-error"></p>
+						</td>
+						<td>
+							<label class="form-item" for="field-genre">Genre</label>
+							<select class="form-input" name="genre" id="field-genre">
+								<option value="select">--Select--</option>
+								<option value="Science Fiction">Science Fiction</option>
+								<option value="Superhero" selected>Superhero</option>
+								<option value="Romance">Romance</option>
+								<option value="Comedy">Comedy</option>
+								<option value="Adventure">Adventure</option>
+								<option value="Thriller">Thriller</option>
+							</select>
+							<p class="form-error-message" id="genre-error"></p>
+						</td>
+					</tr>
+					<tr colspan=4>
+						<td>
+							<label class="form-item" for="field-hasTeaser">
+								<input class="form-checkbox" type="checkbox" name="hasTeaser" id="field-hasTeaser" checked>Has Teaser
+							</label>
+						</td>
+					</tr>
+					<tr colspan=4>
+						<td>
+							<input class="form-button" type="submit" name="submit" value="Save"></input>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</article>
+		<footer>
+			<p>Copyright &copy; 2019</p>
+		</footer>
+	</body>
+</html>

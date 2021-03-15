@@ -1,0 +1,1 @@
+-- Include table data insertion, updation, deletion and select scripts
