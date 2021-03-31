@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="csDept"
+		class="com.restfull.model.Department">
+		<property name="deptId" value="CSE" />
+		<property name="deptName" value="Computer Science" />
+	</bean>
+
+	<bean name="eceDept"
+		class="com.restfull.model.Department">
+		<property name="deptId" value="ECE" />
+		<property name="deptName"
+			value="Electronics and Communication" />
+	</bean>
+
+	<bean name="emp1" class="com.restfull.model.Employee">
+		<property name="empId" value="100" />
+		<property name="empName" value="Murphy" />
+		<property name="dept">
+			<ref bean="csDept" />
+		</property>
+		<property name ="salary" value="200"/>
+		<property name="permanent" value="Permanent"/>
+		<property name ="dateOfBirth" value="12/10/1995"/>
+	</bean>
+
+	<bean name="emp2" class="com.restfull.model.Employee">
+		<property name="empId" value="101" />
+		<property name="empName" value="John" />
+		<property name="dept">
+			<ref bean="eceDept" />
+		</property>
+		<property name ="salary" value="200"/>
+		<property name="permanent" value="Permanent"/>
+		<property name ="dateOfBirth" value="12/10/1995"/>
+	</bean>
+
+	<bean name="emp3" class="com.restfull.model.Employee">
+		<property name="empId" value="110" />
+		<property name="empName" value="Sheldon" />
+		<property name="dept">
+			<ref bean="csDept" />
+		</property>
+		<property name ="salary" value="200"/>
+		<property name="permanent" value="Permanent"/>
+		<property name ="dateOfBirth" value="12/10/1995"/> 
+	</bean>
+
+	<bean name="emp4" class="com.restfull.model.Employee">
+		<property name="empId" value="111" />
+		<property name="empName" value="Sherlock" />
+		<property name="dept">
+			<ref bean="eceDept" />
+		</property>
+		<property name ="salary" value="200"/>
+		<property name="permanent" value="Permanent"/>
+		<property name ="dateOfBirth" value="12/10/1995"/>
+	</bean>
+	
+	<bean id="employeeList" class="com.restfull.dao.EmployeeDao">
+		<property name="list">
+			<list>
+				<ref bean="emp1"></ref>
+				<ref bean="emp2"></ref>
+				<ref bean="emp3"></ref>
+				<ref bean="emp4"></ref>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="deptList" class="com.restfull.dao.DepartmentDao">
+		<property name="list">
+			<list>
+				<ref bean="csDept"></ref>
+				<ref bean="eceDept"></ref>
+			</list>
+		</property>
+	</bean>
+
+</beans>
